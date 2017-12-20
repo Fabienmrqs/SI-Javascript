@@ -7,7 +7,7 @@ var data = {
     duration: '7:27',
     author: 'OtaKing77077',
     author_url: 'https://www.youtube.com/channel/UCRBNWKYrybXl2Un6-ejwx8g',
-    description: 'hat if there was an Empire-focussed short Star Wars animation, drawn with the crazy detail and shading of classic 80s anime that\'s all but vanished from Japan nowadays? <br /> Well, I tried my best. Apologies in advance for not living up to Venus Wars standards. <br /> Drawn and animated by yours truly over 4 years\' worth of weekends, with music by the living guitar solo Zak Rahman and sound design by up and coming audio technician Joseph Leyva. Fans of Lucasarts\' seminal 1994 TIE Fighter game may notice a few familiar sights and sounds. That “incoming missile” noise gives me horrible flashbacks to this day...',
+    description: 'hat if there was an Empire-focussed short Star Wars animation, drawn with the crazy detail and shading of classic 80s anime that\'s all but vanished from Japan nowadays? Well, I tried my best. Apologies in advance for not living up to Venus Wars standards. Drawn and animated by yours truly over 4 years\' worth of weekends, with music by the living guitar solo Zak Rahman and sound design by up and coming audio technician Joseph Leyva. Fans of Lucasarts\' seminal 1994 TIE Fighter game may notice a few familiar sights and sounds. That “incoming missile” noise gives me horrible flashbacks to this day...',
     year: 2015,
     audio_language: 'N/A',
     sub_language: 'N/A',
@@ -33,7 +33,7 @@ var data = {
     duration: '8:39',
     author: 'Alberto Barberá',
     author_url: 'https://www.youtube.com/channel/UCaH3HAq1O9rJvTUn0mlVVkw',
-    description: 'Pelea brutal con un toque de humor y comedia. La idea surgió jugando al Dragon Ball Xenoverse después de leer el manga de Naruto Shippuden mientras me convertía en Super Saiyan y escuchaba el rap de Naruto y Sasuke. Love Dragon Ball games. <br /> Waiting for Naruto Gaiden to come soon... Mientras disfrutemos de DB Super.',
+    description: 'Pelea brutal con un toque de humor y comedia. La idea surgió jugando al Dragon Ball Xenoverse después de leer el manga de Naruto Shippuden mientras me convertía en Super Saiyan y escuchaba el rap de Naruto y Sasuke. Love Dragon Ball games. Waiting for Naruto Gaiden to come soon... Mientras disfrutemos de DB Super.',
     year: 2015,
     audio_language: 'N/A',
     sub_language: 'N/A',
@@ -150,7 +150,7 @@ var data = {
     duration: '4:24',
     author: 'ChickenFeetFilms',
     author_url: 'https://www.youtube.com/channel/UC9nzWgRq-cQcakkzZq1XZvg',
-    description: 'A short "HUNGER GAMES" fan film, made by ChickenFeetFilms. <br /> Music provided by boyinaband.com http://bit.ly/PLrd1Y',
+    description: 'A short "HUNGER GAMES" fan film, made by ChickenFeetFilms. Music provided by boyinaband.com http://bit.ly/PLrd1Y',
     year: 2012,
     audio_language: 'Anglais',
     sub_language: 'N/A',
@@ -176,7 +176,7 @@ var data = {
     duration: '7:27',
     author: 'AndrewProductionsTV',
     author_url: 'https://www.youtube.com/channel/UCOAHgaVjyUjFtxhgCAQ_vAg',
-    description: '►FALLOUT -  Apocalyptic Thriller Short Film <br /> Aaron, a young researcher seeks to discover the deadly disease that plagues Earth. This project is meant to convey the philosophical message that Humans are the deadliest beings to ever walk the Earth through Industrialism, Animal Cruelty/Exploitation, and War. ',
+    description: '►FALLOUT -  Apocalyptic Thriller Short Film Aaron, a young researcher seeks to discover the deadly disease that plagues Earth. This project is meant to convey the philosophical message that Humans are the deadliest beings to ever walk the Earth through Industrialism, Animal Cruelty/Exploitation, and War. ',
     year: 2015,
     audio_language: 'N/A',
     sub_language: 'N/A',
@@ -249,17 +249,6 @@ var data = {
     category: 'Action',
     img: "img/madara.jpg"
   }, {
-    src: 'TIE+Fighter+-+short+film(720p).mp4',
-    title: 'TIE Fighter - short film',
-    duration: '7:27',
-    author: 'OtaKing77077',
-    author_url: 'https://www.youtube.com/channel/UCRBNWKYrybXl2Un6-ejwx8g',
-    description: 'hat if there was an Empire-focussed short Star Wars animation, drawn with the crazy detail and shading of classic 80s anime that\'s all but vanished from Japan nowadays? <br /> Well, I tried my best. Apologies in advance for not living up to Venus Wars standards. <br /> Drawn and animated by yours truly over 4 years\' worth of weekends, with music by the living guitar solo Zak Rahman and sound design by up and coming audio technician Joseph Leyva. Fans of Lucasarts\' seminal 1994 TIE Fighter game may notice a few familiar sights and sounds. That “incoming missile” noise gives me horrible flashbacks to this day...',
-    year: 2015,
-    audio_language: 'N/A',
-    sub_language: 'N/A',
-    rating: 4,
-    category: 'Animation',
-    img:  "img/fighter.png"
+    img:  "img/mario.png"
   } ]
 };

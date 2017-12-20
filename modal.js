@@ -15,14 +15,29 @@ for (var i = 0; i < imgs.length; i++) {
                 init()
             }
         }
-    	modal.style.display = 'block'
+    	modal.style.display = 'flex'
     	document.body.style.overflow = 'hidden'
 	})
 }
 
+window.addEventListener('keydown', function(e) {
+    if (e.keyCode === 27) {
+    	var video = document.getElementById("Video")
+    	var playBtn = document.getElementById('playBtn')
+        var div = document.getElementById('div')
+        
+        div.parentNode.removeChild(div)
+        playBtn.textContent = "\u25B6"
+        modal.style.display = ''
+        document.body.style.overflow = 'visible'
+        video.currentTime = 0
+        video.pause()
+    }
+})
+
 overlay.addEventListener('click', function() {
-	var video = document.getElementById("Video")
-	var playBtn = document.getElementById('playBtn')
+    var video = document.getElementById("Video")
+    var playBtn = document.getElementById('playBtn')
     var div = document.getElementById('div')
     
     div.parentNode.removeChild(div)
