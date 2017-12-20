@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="reset.css">
   <style>
     .box { 
-      width: 30%;
-      height: 300px;
+      width: 24%;
+      height: 550px;
       border: 1px solid orange;
       overflow: hidden;
       margin-top: 30px;
@@ -56,6 +56,7 @@
       width: 65%;
       height: 100%;
       background: rgba(0, 0, 0, 1);
+      /*background: #242325;*/
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
       display: flex;
@@ -66,6 +67,7 @@
       width: 35%;
       height: 100%;
       background: rgba(0, 0, 0, 1);
+      /*background: #242325;*/
       border-top-right-radius: 10px;
       border-bottom-right-radius: 10px;
       display: flex;
@@ -254,6 +256,62 @@
     .movieDescription {
       grid-area: movieDescription;
     }
+
+    /*burger menu*/
+
+/*    .burgerMenuContainer {
+      width: 200px;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      background: rgba(255, 255, 255, 0.2);
+    }*/
+
+    .catContainer {
+      width: 80%;
+      margin: auto;
+    }
+
+    .footer {
+      width: 100%;
+      height: 193px;
+    }
+    .footerContainer {
+      display: flex;
+      width: 100%;
+
+    }
+
+    .colFooter {
+      text-decoration: none;
+      color: #fff;
+      width: 100%;
+      text-align: center;
+      line-height: 2;
+    }
+
+    .featureFooter {
+      width: 1160px;
+      height: 2px;
+      background-color: #fff;
+      margin: auto;
+      margin-top: 10px;
+    }
+
+    .networkLogo {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logoNet {
+      width: 30px;
+      height: 30px;
+      margin: 110px;
+      margin-top: 18px;
+    }
   </style>
 </head>
 
@@ -262,7 +320,6 @@
     <button class="hamburger">&#9776;</button>
     <button class="cross">&#735;</button>
   </header>
-
 
   <div class="mainContainer">
 
@@ -301,7 +358,7 @@
   <section class="catContainer comedie">
     <div class="gCat">
       <div class="featureCat1"></div>
-      <h2 class="titleCat">COMEDIE</h2>
+      <h2 class="titleCat">Coups de coeur</h2>
       <div class="featureCat"></div>
     </div>
     
@@ -316,7 +373,7 @@
     
   </section>
 
-  <section class="catContainer action">
+<!--   <section class="catContainer action">
     <div class="gCat">
       <div class="featureCat1"></div>
       <h2 class="titleCat">ACTION</h2>
@@ -333,7 +390,7 @@
       <div class="featureCat"></div>
     </div>
     
-  </section>
+  </section> -->
 
   <div class="modal">
     <div class="modalOverlay"></div>
@@ -355,14 +412,48 @@
     </div>
   </div>
 
+  <footer class="footer">
+    <div class="footerContainer">
+      <ul class="colFooter">
+        <li>Audio et sous-titres</li>
+        <li>Presse</li>
+        <li>Confidentialité</li>
+      </ul>
+      <ul class="colFooter">
+        <li>Autodescription</li>
+        <li>Relations investisseurs</li>
+        <li>Préférences de cookies</li>
+      </ul>
+      <ul class="colFooter">
+        <li>Centre d'aide</li>
+        <li>Recrutement</li>
+        <li>Mentions légales</li>
+      </ul>
+      <ul class="colFooter">
+        <li>Cartes cadeaux</li>
+        <li>Conditions d'utilisation</li>
+        <li>Nous contacter</li>
+      </ul>
+    </div>
+    <div class="featureFooter"></div>
+
+    <div class="networkLogo">
+    <img src="img/instagram.png" alt="" class="logoNet">
+    <img src="img/facebook.png" alt="" class="logoNet">
+    <img src="img/twitter.png" alt="" class="logoNet">
+    <img src="img/youtube.png" alt="" class="logoNet">
+  </div>
+  </footer>
+
   <script type="text/javascript" src="data.js"></script>
   
   
   <script>
     var containerbox = document.querySelector('.catContainer.thriller')
     var player = document.getElementById('idDuplayer')
+    var button = document.querySelector('.hamburger')
 
-    for (let index = 0; index < data.films.length; index++) {
+    for (let index = 0; index < 4; index++) {
       console.log('test')
       var box = document.createElement('div')
       box.classList.add('box')
@@ -375,6 +466,22 @@
       box.appendChild(img)
       containerbox.appendChild(box)     
     }
+
+    button.addEventListener('click', function() {
+      for (let index = 4; index < data.films.length; index++) {
+      console.log('test')
+      var box = document.createElement('div')
+      box.classList.add('box')
+
+      var img = document.createElement('img')
+
+      img.src = data.films[index].img
+      img.classList.add('img')
+
+      box.appendChild(img)
+      containerbox.appendChild(box)     
+    }
+    })
 
 
   </script>
