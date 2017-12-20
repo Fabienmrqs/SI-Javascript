@@ -248,5 +248,18 @@ var data = {
     rating: 4,
     category: 'Action',
     img: "img/madara.jpg"
-  }, ]
+  }, {
+    src: 'TIE+Fighter+-+short+film(720p).mp4',
+    title: 'TIE Fighter - short film',
+    duration: '7:27',
+    author: 'OtaKing77077',
+    author_url: 'https://www.youtube.com/channel/UCRBNWKYrybXl2Un6-ejwx8g',
+    description: 'hat if there was an Empire-focussed short Star Wars animation, drawn with the crazy detail and shading of classic 80s anime that\'s all but vanished from Japan nowadays? <br /> Well, I tried my best. Apologies in advance for not living up to Venus Wars standards. <br /> Drawn and animated by yours truly over 4 years\' worth of weekends, with music by the living guitar solo Zak Rahman and sound design by up and coming audio technician Joseph Leyva. Fans of Lucasarts\' seminal 1994 TIE Fighter game may notice a few familiar sights and sounds. That “incoming missile” noise gives me horrible flashbacks to this day...',
+    year: 2015,
+    audio_language: 'N/A',
+    sub_language: 'N/A',
+    rating: 4,
+    category: 'Animation',
+    img:  "img/fighter.png"
+  } ]
 };

@@ -306,6 +306,12 @@
       margin: 110px;
       margin-top: 18px;
     }
+
+    .showMore {
+      color: white;
+      text-align: center;
+      margin-top: 30px;
+    }
   </style>
 </head>
 
@@ -333,21 +339,18 @@
       <img src="img/arrow.png" alt="arrow" class="popNext">
     </div>
   </div>
-
-
-
-
   
   <div class="gCat">
       
       <div class="featureCat1"></div>
-      <h2 class="titleCat"> ACCUEIL </h2>
+      <h2 class="titleCat">Tous nos films</h2>
       <div class="featureCat"></div>
     </div>
   <section class="catContainer thriller">
     
     
   </section>
+  <p class="showMore">Voir plus</p>
 
 <!--   <section class="catContainer comedie">
     <div class="gCat">
@@ -445,7 +448,7 @@
   <script>
     var containerbox = document.querySelector('.catContainer.thriller')
     var player = document.getElementById('idDuplayer')
-    var button = document.querySelector('.hamburger')
+    var showMore = document.querySelector('.showMore')
 
     for (let index = 0; index < 4; index++) {
       console.log('test')
@@ -476,7 +479,8 @@
       containerbox.appendChild(box)     
     }
 
-    button.addEventListener('click', function() {
+    showMore.addEventListener('click', function() {
+      showMore.style.display = 'none'
       for (let index = 4; index < data.films.length; index++) {
         boxes[index].style.display = ''
     }
