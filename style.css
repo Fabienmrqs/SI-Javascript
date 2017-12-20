@@ -109,6 +109,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  
 }
 
 .box { 
@@ -119,12 +121,22 @@ body {
   margin-top: 30px;
 }
 
+.box:hover {
+  background-color: black;
+}
+
 .h1 {
   color: #ffffff;
 }
 
 .img {
   width: 100%;
+}
+
+.img:hover {
+  background-color: black;
+  transition: all 1s ease;
+  
 }
 
 @font-face {
