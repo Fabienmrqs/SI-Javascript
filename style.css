@@ -114,14 +114,9 @@ body {
 }
 
 .box { 
-<<<<<<< HEAD
-  width: 30%;
-  height: 300px;
-=======
   width: 24%;
   height: 550px;
   border: 1px solid orange;
->>>>>>> 363129441b1a4ae742ee150c94e540ec6a3c656f
   overflow: hidden;
   margin-top: 30px;
 }
