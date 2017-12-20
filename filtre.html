@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="filtre.js"></script>
+    <script src="data.js"></script>
+</head>
+<body>
+
+    <button class="comedie">comedie</button>
+    <button class="animation">animation</button>
+    <button class="action">action</button>
+    <button class="horreur">horreur</button>
+    <button class="all">all</button>
+
+<div class="container"></div>
+
+</body>
+    <script>
+
+    var comedie = document.querySelector('.comedie');
+    var animation = document.querySelector('.animation');
+    var action = document.querySelector('.action');
+    var horreur = document.querySelector('.horreur');
+    var all = document.querySelector('.all');
+    var container = document.querySelector('.container');
+
+    for (let i = 0; i < data.films.length; i++) {
+        let title = data.films[i].title;
+        let html = '<div>';
+        html += '<h3 class="filmTitle">'+ title + '</h3>';
+        html+= '</div>';
+        container.innerHTML += html;
+    }
+
+    let filmTitle = document.querySelectorAll('.filmTitle');
+
+    comedie.addEventListener('click',function () {
+    for (let i = 0; i < data.films.length; i++) {
+            if(data.films[i].category === 'Comedy' && data.films[i].title === filmTitle[i].textContent){
+                filmTitle[i].style.display = '';
+              }
+            else{
+                filmTitle[i].style.display = 'none';
+            }
+        }
+    });
+
+    animation.addEventListener('click',function () {
+        for (let i = 0; i < data.films.length; i++) {
+            if(data.films[i].category === 'Animation' && data.films[i].title === filmTitle[i].textContent){
+                filmTitle[i].style.display = '';
+            }
+            else{
+                filmTitle[i].style.display = 'none';
+            }
+        }
+    });
+
+    action.addEventListener('click',function () {
+        for (let i = 0; i < data.films.length; i++) {
+            if(data.films[i].category === 'Action' && data.films[i].title === filmTitle[i].textContent){
+                filmTitle[i].style.display = '';
+            }
+            else{
+                filmTitle[i].style.display = 'none';
+            }
+        }
+    });
+
+    horreur.addEventListener('click',function () {
+        for (let i = 0; i < data.films.length; i++) {
+            if(data.films[i].category === 'Horror / Thriller' && data.films[i].title === filmTitle[i].textContent){
+                filmTitle[i].style.display = '';
+            }
+            else{
+                filmTitle[i].style.display = 'none';
+            }
+        }
+    });
+    all.addEventListener('click',function () {
+        for (let i = 0; i < data.films.length; i++) {
+
+                filmTitle[i].style.display = '';
+
+        }
+    });
+
+
+
+
+    </script>
+</html>
