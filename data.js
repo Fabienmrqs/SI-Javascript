@@ -143,7 +143,7 @@ var data = {
     sub_language: 'N/A',
     rating: 4,
     category: 'Comedy',
-    imug:  "img/cantina.jpg"
+    img:  "img/cantina.jpg"
   }, {
     src: 'THE+74th+HUNGER+GAMES+(SHORT+COMEDY+FAN+FILM)(720p).mp4',
     title: 'THE 74th HUNGER GAMES (SHORT COMEDY FAN FILM)',
