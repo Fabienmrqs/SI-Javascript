@@ -6,6 +6,7 @@
   <title>Fan Stream'z</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="reset.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
   <style>
     .h1 {
       color: #ffffff;
@@ -480,6 +481,14 @@
         boxes[index].style.display = ''
     }
     })
+
+    $(document).ready(function (){
+             $(".arrowContainer").click(function (){
+                 $('html, body').animate({
+                     scrollTop: $(".gCat").offset().top
+                 }, 1000);
+             });
+         });
 
 
   </script>
