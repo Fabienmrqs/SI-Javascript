@@ -114,8 +114,8 @@ body {
 }
 
 .box { 
-  width: 30%;
-  height: 300px;
+  width: 24%;
+  height: 550px;
   border: 1px solid orange;
   overflow: hidden;
   margin-top: 30px;

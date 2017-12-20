@@ -7,12 +7,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="reset.css">
   <style>
-    .box { 
-      width: 24%;
-      height: 550px;
-      border: 1px solid orange;
-      overflow: hidden;
-      margin-top: 30px;
+    .box:hover {
+      border: 1px solid red;
     }
 
     .h1 {
@@ -276,6 +272,7 @@
     .footer {
       width: 100%;
       height: 193px;
+      margin-top: 100px;
     }
     .footerContainer {
       display: flex;
@@ -355,7 +352,7 @@
     
   </section>
 
-  <section class="catContainer comedie">
+<!--   <section class="catContainer comedie">
     <div class="gCat">
       <div class="featureCat1"></div>
       <h2 class="titleCat">Coups de coeur</h2>
@@ -371,7 +368,7 @@
       <div class="featureCat"></div>
     </div>
     
-  </section>
+  </section> -->
 
 <!--   <section class="catContainer action">
     <div class="gCat">
@@ -467,11 +464,11 @@
       containerbox.appendChild(box)     
     }
 
-    button.addEventListener('click', function() {
-      for (let index = 4; index < data.films.length; index++) {
+    for (let index = 4; index < data.films.length; index++) {
       console.log('test')
       var box = document.createElement('div')
       box.classList.add('box')
+      box.style.display = 'none'
 
       var img = document.createElement('img')
 
@@ -480,6 +477,11 @@
 
       box.appendChild(img)
       containerbox.appendChild(box)     
+    }
+
+    button.addEventListener('click', function() {
+      for (let index = 4; index < data.films.length; index++) {
+        boxes[index].style.display = ''
     }
     })
 
