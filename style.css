@@ -72,6 +72,10 @@ body {
   width: 100%;
 }
 
+.popNext:hover {
+  cursor: pointer;
+}
+
 .catContainer {
   width: 100%;
   
@@ -187,6 +191,11 @@ body {
 .all {
   padding-right: 20px;
 }
+
+.all:hover, .horreur:hover, .action:hover, .animation:hover, .comedie:hover {
+  cursor: pointer;
+}
+
 @font-face {
   font-family: 
 }

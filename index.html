@@ -105,6 +105,10 @@
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
+    video:hover {
+      cursor: pointer;
+    }
+
     video::-webkit-media-controls {
       display:none !important;
     }
@@ -131,6 +135,10 @@
       background: silver;
     }
 
+    #playBtn:hover {
+      cursor: pointer;
+    }
+
     #restartBtn {
       background: silver;
       width: 40px;
@@ -142,6 +150,10 @@
       grid-area: restartBtn;
     }
 
+    #restartBtn:hover {
+      cursor: pointer;
+    }
+
     #progressBar {
       width: 100%;
       grid-area: progressBar;
@@ -149,6 +161,10 @@
       -webkit-appearance: none;
       height: 8px;
       border-radius: 10px;
+    }
+
+    #progressBar:hover {
+      cursor: pointer;
     }
 
     progress[value]::-webkit-progress-bar {
@@ -177,10 +193,18 @@
       align-self: center;
     }
 
+    #muteBtn:hover {
+      cursor: pointer;
+    }
+
     #volumeSlider {
       grid-area: volumeSlider;
       width: 75%;
       margin: auto;
+    }
+
+    #volumeSlider:hover {
+      cursor: pointer;
     }
 
     input[type='range'] {
@@ -214,6 +238,10 @@
       text-align: center;
       align-self: center;*/
       color: white;
+    }
+
+    #fullScreenBtn:hover {
+      cursor: pointer;
     }
 
     #div {
@@ -352,14 +380,107 @@
     .all {
       color: #F5A623;
     }
+
+    /*burger menu*/
+
+    .btnNav{
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.btnNav .barre {
+  width: 30px;
+  height: 3px;
+  background: white;
+  margin-top: 3px;
+}
+
+.nav {
+  position: fixed;
+  position: absolute;
+  padding: 0 30px;
+  background: rgba(0, 0, 0, 0.2);
+  width: 140px;
+  height: 100vh;
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
+
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+}
+
+.open {
+  transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+  transition: .6s ease;
+}
+
+.nav ul {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+
+.nav ul li {
+  margin: 20px 0;
+}
+
+.nav ul li a {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 20px;
+  letter-spacing: .07cm;
+  font-weight: 800;
+}
+
+.offcanvas {
+  position: absolute;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  transition: .6s ease;
+}
+.offcanvas .menu {
+  position: absolute;
+  left: -150px;
+  width: 150px;
+  top: 0;
+  bottom: 0;
+}
+.offcanvas .content, .offcanvas .menu {
+  transition: transform 0.5s;
+}
+.offcanvas.open .content, .offcanvas.open .menu {
+  transform: translate3d(150px, 0, 0);
+}
   </style>
 </head>
 
 <body>
-  <header>
+<!--   <header>
     <button class="hamburger">&#9776;</button>
     <button class="cross">&#735;</button>
-  </header>
+  </header> -->
+
+  <div class="btnNav ">
+    <div class="barre button"></div>
+    <div class="barre button"></div>
+    <div class="barre"></div>
+  </div>
+  <div class="nav offcanvas">
+    <ul>
+      <li><a href="">Accueil</a></li>
+      <li><a href="">Thriller</a></li>
+      <li><a href="">Comédie</a></li>
+      <li><a href="">Animation</a></li>
+      <li><a href="">Action</a></li>
+    </ul>
+  </div>
 
   <div class="mainContainer">
 
@@ -508,6 +629,8 @@
 
     var filmTitle = document.querySelectorAll('.box')
 
+    var titleCat = document.querySelector('.titleCat')
+
     all.addEventListener('click', function() {
       for (var i = 0; i < divbox.length; i++) {
           if (data.films[i].category === 'all') {
@@ -521,6 +644,7 @@
           action.style.color = "white";
           comedie.style.color = "white";
           all.style.color = "#F5A623";
+          titleCat.textContent = 'Tous nos films'
     });
       horreur.addEventListener('click', function() {
         for (var i = 0; i < divbox.length; i++) {
@@ -535,6 +659,7 @@
           action.style.color = "white";
           comedie.style.color = "white";
           all.style.color = "white";
+          titleCat.textContent = 'Horreur'
     });
     animation.addEventListener('click', function() {
       for (var i = 0; i < divbox.length; i++) {
@@ -549,6 +674,7 @@
         action.style.color = "white";
         comedie.style.color = "white";
         all.style.color = "white";
+        titleCat.textContent = 'Animation'
   });
   action.addEventListener('click', function() {
     for (var i = 0; i < divbox.length; i++) {
@@ -563,6 +689,7 @@
       action.style.color = "#F5A623";
       comedie.style.color = "white";
       all.style.color = "white";
+      titleCat.textContent = 'Action'
 });
   comedie.addEventListener('click', function() {
     for (var i = 0; i < divbox.length; i++) {
@@ -577,6 +704,7 @@
       action.style.color = "white";
       comedie.style.color = "#F5A623";
       all.style.color = "white";
+      titleCat.textContent = 'Comedie'
   });
 
     comedie.addEventListener('click',function () {
@@ -709,7 +837,14 @@
 
   </script>
   
+    <script type="text/javascript">
   
+    var barre = document.querySelector('.btnNav')
+
+    barre.addEventListener('click', function() {
+      document.querySelector('.offcanvas').classList.toggle('open')
+    })
+  </script>
   
   <script type="text/javascript" src="burgermenu.js"></script>
   <script type="text/javascript" src="./modal.js"></script>
