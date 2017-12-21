@@ -113,7 +113,6 @@
       align-items: center;
       grid-area: playBtn;
       background: silver;
-      margin: auto;
     }
 
     #restartBtn {
@@ -205,7 +204,7 @@
       width: 600px;
       margin: auto;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
       grid-template-rows: 13fr 1fr 1fr;
       grid-template-areas:
           "video video video video video"
@@ -317,6 +316,17 @@
       color: white;
       text-align: center;
       margin-top: 20px;
+      padding-top: 20px;
+      width: 100px;
+      margin: auto;
+      transition: 0.3s ease;
+    }
+
+    .showMore:hover {
+      font-size: 20.5px;
+      transition: 0.3s ease;
+      cursor: pointer;
+      color: #F5A623;
     }
 
     ::-webkit-scrollbar { 
