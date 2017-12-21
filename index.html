@@ -359,7 +359,7 @@
     </div>
   </div>
   
-  <div>
+  <div class="buttonContainer"> 
     <button class="comedie">comedie</button>
     <button class="animation">animation</button>
     <button class="action">action</button>
@@ -530,7 +530,7 @@
 
     for (let index = 0; index < 4; index++) {
       var box = document.createElement('div')
-
+    
       box.classList.add('box')
 
       var img = document.createElement('img')
@@ -540,6 +540,19 @@
 
       box.appendChild(img)
       containerbox.appendChild(box)     
+
+      var info = document.createElement('div');
+      info.classList.add('info');
+      box.appendChild(info);
+      var title = document.createElement('p');
+      title.classList.add('title');
+      info.appendChild(title);
+      title.innerHTML += data.films[index].title;
+
+      var description = document.createElement('p');
+      description.classList.add('description');
+      info.appendChild(description);
+      description.innerHTML += data.films[index].description;
     }
 
     for (let index = 4; index < data.films.length; index++) {
@@ -554,6 +567,10 @@
 
       box.appendChild(img)
       containerbox.appendChild(box)
+      var info = document.createElement('div');
+      info.classList.add('info');
+      box.appendChild(info);
+      info.innerHTML += data.films[index].title;
     }
     var filmTitle = document.querySelectorAll('.box')
     showMore.addEventListener('click', function() {
@@ -579,6 +596,7 @@
   <script type="text/javascript" src="burgermenu.js"></script>
   <script type="text/javascript" src="./modal.js"></script>
   <script type="text/javascript" src="./videoPlayer.js"></script>
+  <script type="text/javascript" src="./hover.js"></script>
 </body>
 
 </html>
