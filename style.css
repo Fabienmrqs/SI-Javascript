@@ -95,7 +95,7 @@ body {
 }
 
 .featureCat1 {
-  margin-right: 10px;
+  margin-right: 50px;
   height: 1px;
   width: 50px;
   background: #fff;
@@ -103,7 +103,7 @@ body {
 }
 
 .featureCat {
-  margin-left: 10px;
+  margin-left: 50px;
   height: 1px;
   width: 50px;
   background: #fff;
@@ -198,4 +198,49 @@ body {
 
 @font-face {
   font-family: 
+}
+
+.zIndex__progressBar {
+  position: absolute;
+  z-index: 9999999999;
+  bottom: 40px;
+  left: 1px;
+  width: 100% !important;
+}
+.zIndex__playBtn {
+  position: absolute;
+  z-index: 9999999999;
+  bottom: 9px;
+  left: 2px;
+}
+.zIndex__restartBtn {
+  position: absolute;
+  z-index: 9999999999;
+  bottom: 9px;
+  left: 40px;
+}
+.zIndex__digitTime {
+  position: absolute;
+  z-index: 9999999999;
+  bottom: 14px;
+  right: 36px;
+}
+.zIndex__muteBtn {
+  position: absolute;
+  z-index: 9999999999;
+  bottom: 12px;
+  right: 260px;
+}
+.zIndex__volumeSlider {
+  position: absolute;
+  z-index: 9999999999;
+  bottom: 18px;
+  right: 122px;
+  width: 10% !important;
+}
+.zIndex__fullScreenBtn {
+  position: absolute;
+  z-index: 9999999999;
+  bottom: 16px;
+  right: 8px;
 }

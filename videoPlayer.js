@@ -213,35 +213,95 @@ function init() {
       fullScreenBtn.textContent = "{ }"
 
       fullScreenBtn.addEventListener("click", function() {
-        // if (!checkFullScreen) {
-        //   div.style.display = 'block'
-        //   video.webkitRequestFullScreen()
-        //   checkFullScreen = 1
-        // } else {
-        //   video.webkitExitFullscreen()
-        //   checkFullScreen = 0
-        //   div.style.display = 'grid'
-        // }
+        if (!checkFullScreen) {
+          div.style.display = 'block'
+          video.webkitRequestFullScreen()
+          progressBar.classList.toggle('zIndex__progressBar')
+          playBtn.classList.toggle('zIndex__playBtn')
+          restartBtn.classList.toggle('zIndex__restartBtn')
+          digitTime.classList.toggle('zIndex__digitTime')
+          muteBtn.classList.toggle('zIndex__muteBtn')
+          volumeSlider.classList.toggle('zIndex__volumeSlider')
+          fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+          checkFullScreen = 1
+        } else {
+          video.webkitExitFullscreen()
+          div.style.display = 'grid'
+          progressBar.classList.toggle('zIndex__progressBar')
+          playBtn.classList.toggle('zIndex__playBtn')
+          restartBtn.classList.toggle('zIndex__restartBtn')
+          digitTime.classList.toggle('zIndex__digitTime')
+          muteBtn.classList.toggle('zIndex__muteBtn')
+          volumeSlider.classList.toggle('zIndex__volumeSlider')
+          fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+          checkFullScreen = 0
+        }
       })
       window.addEventListener('keydown', function(e) {
         var div = document.getElementById('div')
+        var progressBar = document.getElementById('progressBar')
+        var playBtn = document.getElementById('playBtn')
+        var restartBtn = document.getElementById('restartBtn')
+        var digitTime = document.getElementById('digitTime')
+        var muteBtn = document.getElementById('muteBtn')
+        var volumeSlider = document.getElementById('volumeSlider')
+        var fullScreenBtn = document.getElementById('fullScreenBtn')
 
         if (e.keyCode === 70 && !checkFullScreen) {
           if (video.requestFullscreen) {
             video.requestFullscreen();
             div.style.display = 'block'
+            progressBar.classList.toggle('zIndex__progressBar')
+            playBtn.classList.toggle('zIndex__playBtn')
+            restartBtn.classList.toggle('zIndex__restartBtn')
+            digitTime.classList.toggle('zIndex__digitTime')
+            muteBtn.classList.toggle('zIndex__muteBtn')
+            volumeSlider.classList.toggle('zIndex__volumeSlider')
+            fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
           } else if (video.mozRequestFullScreen) {
             video.mozRequestFullScreen();
             div.style.display = 'block'
+            progressBar.classList.toggle('zIndex__progressBar')
+            playBtn.classList.toggle('zIndex__playBtn')
+            restartBtn.classList.toggle('zIndex__restartBtn')
+            digitTime.classList.toggle('zIndex__digitTime')
+            muteBtn.classList.toggle('zIndex__muteBtn')
+            volumeSlider.classList.toggle('zIndex__volumeSlider')
+            fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
           } else if (video.webkitRequestFullscreen) {
             video.webkitRequestFullscreen();
             div.style.display = 'block'
+            progressBar.classList.toggle('zIndex__progressBar')
+            playBtn.classList.toggle('zIndex__playBtn')
+            restartBtn.classList.toggle('zIndex__restartBtn')
+            digitTime.classList.toggle('zIndex__digitTime')
+            muteBtn.classList.toggle('zIndex__muteBtn')
+            volumeSlider.classList.toggle('zIndex__volumeSlider')
+            fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
           }
           checkFullScreen = 1
-        } else {
+        } else if (e.keyCode === 70) {
           video.webkitExitFullscreen()
           checkFullScreen = 0
           div.style.display = 'grid'
+          progressBar.classList.toggle('zIndex__progressBar')
+          playBtn.classList.toggle('zIndex__playBtn')          
+          restartBtn.classList.toggle('zIndex__restartBtn')
+          digitTime.classList.toggle('zIndex__digitTime')
+          muteBtn.classList.toggle('zIndex__muteBtn')
+          volumeSlider.classList.toggle('zIndex__volumeSlider')
+          fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+        } else if (e.keyCode === 27) {
+          video.webkitExitFullscreen()
+          checkFullScreen = 0
+          div.style.display = 'grid'
+          progressBar.classList.toggle('zIndex__progressBar')
+          playBtn.classList.toggle('zIndex__playBtn')
+          restartBtn.classList.toggle('zIndex__restartBtn')
+          digitTime.classList.toggle('zIndex__digitTime')
+          muteBtn.classList.toggle('zIndex__muteBtn')
+          volumeSlider.classList.toggle('zIndex__volumeSlider')
+          fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
         }
       })
     }

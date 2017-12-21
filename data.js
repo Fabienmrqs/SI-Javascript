@@ -249,6 +249,7 @@ var data = {
     category: 'Action',
     img: "img/madara.jpg"
   }, {
+    title: 'Mario VS Street Fighter (Coming soon)',
     category: 'Animation',
     img:  "img/mario.png"
   } ]

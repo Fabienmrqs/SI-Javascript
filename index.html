@@ -124,33 +124,39 @@
     }*/
 
     #playBtn {
-      width: 40px;
-      height: 30px;
+      width: 32px;
+      height: 24px;
       border-radius: 10px;
       display: flex;
       justify-content: center;
       align-items: center;
       grid-area: playBtn;
       background: silver;
+      padding-top: 3px;
     }
 
     #playBtn:hover {
       cursor: pointer;
+      background: #F5A623;
+      transition: ease .2s;
     }
 
     #restartBtn {
       background: silver;
-      width: 40px;
-      height: 30px;
+      width: 32px;
+      height: 24px;
       border-radius: 10px;
       display: flex;
       justify-content: center;
       align-items: center;
       grid-area: restartBtn;
+      padding-top: 3px;
     }
 
     #restartBtn:hover {
       cursor: pointer;
+      background: red;
+      transition: ease .2s;
     }
 
     #progressBar {
@@ -200,6 +206,7 @@
       grid-area: volumeSlider;
       width: 75%;
       margin: auto;
+      text-align: right;
     }
 
     #volumeSlider:hover {
@@ -233,9 +240,9 @@
     }
 
     #fullScreenBtn {
-/*      grid-area: fullScreenBtn;
+      grid-area: fullScreenBtn;
       text-align: center;
-      align-self: center;*/
+      align-self: center;
       color: white;
     }
 
@@ -252,7 +259,7 @@
       grid-template-areas:
           "video video video video video"
           "progressBar progressBar progressBar progressBar digitTime"
-          "playBtn restartBtn void muteBtn volumeSlider"
+          "playBtn restartBtn muteBtn volumeSlider fullScreenBtn"
       ;
     }
 
@@ -288,14 +295,17 @@
 
     .movieYear {
       grid-area: movieYear;
+      align-self: center;
     }
 
     .movieRating {
       grid-area: movieRating;
+      align-self: center;
     }
 
     .movieDescription {
       grid-area: movieDescription;
+      line-height: 20px;
     }
 
     /*burger menu*/
@@ -384,6 +394,7 @@
 
     .btnNav{
   position: absolute;
+  position: fixed;
   top: 30px;
   left: 30px;
   z-index: 20;
@@ -703,7 +714,7 @@
       action.style.color = "white";
       comedie.style.color = "#F5A623";
       all.style.color = "white";
-      titleCat.textContent = 'Comedie'
+      titleCat.textContent = 'Comédie'
   });
 
     comedie.addEventListener('click',function () {
