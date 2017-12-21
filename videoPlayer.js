@@ -73,6 +73,14 @@ function init() {
         video.pause()
         playBtn.textContent = "\u25B6"
       })
+
+      window.addEventListener('keydown', function(e) {
+        if (e.keyCode === 83) {
+        video.currentTime = 0
+        video.pause()
+        playBtn.textContent = "\u25B6"
+        }
+      })
     }
 
     function createMuteBtn() {
@@ -93,6 +101,19 @@ function init() {
           muteBtn.textContent = "\uD83D\uDD0A"
         }
       })
+
+      window.addEventListener('keydown', function(e) {
+        var volumeSlider = document.getElementById("volumeSlider")
+        var video = document.getElementById("Video")
+
+        if (e.keyCode === 77 && muteBtn.textContent === "\uD83D\uDD0A") {
+          video.volume = 0
+          muteBtn.textContent = "\uD83D\uDD07"
+        } else {
+          video.volume = volumeSlider.value / 100
+          muteBtn.textContent = "\uD83D\uDD0A"
+        }
+      })
     }
 
     function createVolumeSlider() {
@@ -108,6 +129,24 @@ function init() {
       volumeSlider.addEventListener("input", function() {
         video.volume = volumeSlider.value / 100
         muteBtn.textContent = "\uD83D\uDD0A"
+        if (volumeSlider.value < 1) {
+          muteBtn.textContent = "\uD83D\uDD07"
+        }
+      })
+      window.addEventListener('keydown', function(e) {
+        if (volumeSlider.value < 1) {
+          muteBtn.textContent = "\uD83D\uDD07"
+        }
+        if (e.keyCode === 38) {
+          volumeSlider.value++
+          console.log(volumeSlider.value)
+          video.volume = volumeSlider.value / 100
+        }
+        if (e.keyCode === 40) {
+          volumeSlider.value -= 2
+          console.log(volumeSlider.value)
+          video.volume = volumeSlider.value / 100
+        }
       })
     }
 
@@ -166,6 +205,7 @@ function init() {
     function createFullScreenBtn() {
       var fullScreenBtn = document.createElement("div")
       var video = document.getElementById("Video")
+      var checkFullScreen = 0
 
       div.appendChild(fullScreenBtn)
       fullScreenBtn.setAttribute('id', "fullScreenBtn")
@@ -173,6 +213,22 @@ function init() {
 
       fullScreenBtn.addEventListener("click", function() {
         video.webkitRequestFullScreen()
+        checkFullScreen = 1
+      })
+      window.addEventListener('keydown', function(e) {
+        if (e.keyCode === 70 && !checkFullScreen) {
+          if (video.requestFullscreen) {
+            video.requestFullscreen();
+          } else if (video.mozRequestFullScreen) {
+            video.mozRequestFullScreen();
+          } else if (video.webkitRequestFullscreen) {
+            video.webkitRequestFullscreen();
+          }
+          checkFullScreen = 1
+        } else {
+          video.webkitExitFullscreen()
+          checkFullScreen = 0
+        }
       })
     }
 
@@ -189,6 +245,31 @@ function init() {
       }
     }
 
+    function keyCodeFunction() {
+      var video = document.getElementById("Video")
+
+      window.addEventListener('keydown', function(e) {
+        if (e.keyCode === 39) {
+          video.currentTime += 5
+        }
+        if (e.keyCode === 37) {
+          video.currentTime -= 5
+        }
+        if (e.keyCode === 32) {
+          playPause()
+        }
+        // if (e.keyCode === 75) {
+        //   playPause()
+        // }
+        if (e.keyCode === 74) {
+          video.currentTime -= 10
+        }
+        if (e.keyCode === 76) {
+          video.currentTime += 10
+        }
+      })
+    }
+
     createVideo()
     createPlayBtn()
     createRestartBtn()
@@ -197,5 +278,6 @@ function init() {
     createProgressBar()
     createDigitTime()
     createDescContent()
+    keyCodeFunction()
     // createFullScreenBtn()
   }
