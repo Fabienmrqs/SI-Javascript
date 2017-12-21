@@ -66,6 +66,13 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 200px;
+  transition: ease 0.4s;
+}
+
+.arrowContainer:hover {
+  cursor: pointer;
+  width: 55px;
+  transition: ease 0.4s;
 }
 
 .popNext {
@@ -117,7 +124,10 @@ body {
 .box { 
   width: 24%;
   height: 550px;
+<<<<<<< HEAD
   
+=======
+>>>>>>> 3d1bed5bde730a5d391de6b269ab3116bd2bdc56
   overflow: hidden;
   margin-top: 30px;
 }
@@ -159,6 +169,7 @@ body {
   font-size: 25px;
 }
 
+/*
 @font-face {
   font-family: 
-}
+}*/

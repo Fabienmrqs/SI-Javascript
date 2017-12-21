@@ -249,6 +249,7 @@ var data = {
     category: 'Action',
     img: "img/madara.jpg"
   }, {
+    category: 'Animation',
     img:  "img/mario.png"
   } ]
 };
