@@ -241,6 +241,6 @@ body {
 .zIndex__fullScreenBtn {
   position: absolute;
   z-index: 9999999999;
-  bottom: 16px;
-  right: 8px;
+  bottom: 9px;
+  right: 7px;
 }

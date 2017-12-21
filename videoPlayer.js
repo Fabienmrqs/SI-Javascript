@@ -204,13 +204,17 @@ function init() {
 
     function createFullScreenBtn() {
       var fullScreenBtn = document.createElement("div")
+      var fullScreenImg = document.createElement("img")
       var video = document.getElementById("Video")
       var checkFullScreen = 0
       var div = document.getElementById('div')
 
       div.appendChild(fullScreenBtn)
+      fullScreenBtn.appendChild(fullScreenImg)
       fullScreenBtn.setAttribute('id', "fullScreenBtn")
-      fullScreenBtn.textContent = "{ }"
+      fullScreenImg.setAttribute('src', './img/full-screen.png')
+      fullScreenImg.setAttribute('width', '20px')
+      // fullScreenBtn.textContent = "{ }"
 
       fullScreenBtn.addEventListener("click", function() {
         if (!checkFullScreen) {
