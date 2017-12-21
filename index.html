@@ -331,21 +331,31 @@
       <div class="featureHome2"></div>
       <div class="featureHome3"></div>
     </div>
+    
     <div class="featureHomeLeft">
       <div class="featureHome4"></div>
       <div class="featureHome"></div>
     </div>
+    <div class="textmiddle">"Le streaming de fan films comme vous ne l'avez jamais vu."</div>
+    
     <div class="arrowContainer">
       <img src="img/arrow.png" alt="arrow" class="popNext">
     </div>
-  </div>
-  
-  <div class="gCat">
+    <div class="gCat">
       
       <div class="featureCat1"></div>
       <h2 class="titleCat">Tous nos films</h2>
       <div class="featureCat"></div>
     </div>
+  </div>
+  
+  <div>
+    <button class="comedie">comedie</button>
+    <button class="animation">animation</button>
+    <button class="action">action</button>
+    <button class="horreur">horreur</button>
+    <button class="all">all</button>
+  </div>
   <section class="catContainer thriller">
     
     
@@ -449,6 +459,64 @@
     var containerbox = document.querySelector('.catContainer.thriller')
     var player = document.getElementById('idDuplayer')
     var showMore = document.querySelector('.showMore')
+    var comedie = document.querySelector('.comedie');
+    var animation = document.querySelector('.animation');
+    var action = document.querySelector('.action');
+    var horreur = document.querySelector('.horreur');
+    var all = document.querySelector('.all');
+
+    var filmTitle = document.querySelectorAll('.box')
+
+    comedie.addEventListener('click',function () {
+    for (let i = 0; i < data.films.length; i++) {
+            if(data.films[i].category === 'Comedy' ){
+                filmTitle[i].style.display = '';
+              }
+            else{
+                filmTitle[i].style.display = 'none';
+            }
+        }
+    });
+
+    animation.addEventListener('click',function () {
+        for (let i = 0; i < data.films.length; i++) {
+            if(data.films[i].category === 'Animation' ){
+                filmTitle[i].style.display = '';
+            }
+            else{
+                filmTitle[i].style.display = 'none';
+            }
+        }
+    });
+
+    action.addEventListener('click',function () {
+        for (let i = 0; i < data.films.length; i++) {
+            if(data.films[i].category === 'Action' ){
+                filmTitle[i].style.display = '';
+            }
+            else{
+                filmTitle[i].style.display = 'none';
+            }
+        }
+    });
+
+    horreur.addEventListener('click',function () {
+        for (let i = 0; i < data.films.length; i++) {
+            if(data.films[i].category === 'Horror / Thriller' ){
+                filmTitle[i].style.display = '';
+            }
+            else{
+                filmTitle[i].style.display = 'none';
+            }
+        }
+    });
+    all.addEventListener('click',function () {
+        for (let i = 0; i < data.films.length; i++) {
+
+                filmTitle[i].style.display = '';
+
+        }
+    });
 
     for (let index = 0; index < 4; index++) {
       console.log('test')
@@ -478,7 +546,7 @@
       box.appendChild(img)
       containerbox.appendChild(box)     
     }
-
+    var filmTitle = document.querySelectorAll('.box')
     showMore.addEventListener('click', function() {
       showMore.style.display = 'none'
       for (let index = 4; index < data.films.length; index++) {
