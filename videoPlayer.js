@@ -104,6 +104,7 @@ function init() {
 
       window.addEventListener('keydown', function(e) {
         var volumeSlider = document.getElementById("volumeSlider")
+        var video = document.getElementById("Video")
 
         if (e.keyCode === 77 && muteBtn.textContent === "\uD83D\uDD0A") {
           video.volume = 0
@@ -257,9 +258,9 @@ function init() {
         if (e.keyCode === 32) {
           playPause()
         }
-        if (e.keyCode === 75) {
-          playPause()
-        }
+        // if (e.keyCode === 75) {
+        //   playPause()
+        // }
         if (e.keyCode === 74) {
           video.currentTime -= 10
         }
