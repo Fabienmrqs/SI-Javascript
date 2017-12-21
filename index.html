@@ -481,6 +481,7 @@
     for (let i = 0; i < data.films.length; i++) {
             if(data.films[i].category === 'Comedy' ){
                 filmTitle[i].style.display = '';
+                showMore.style.display = 'none'
               }
             else{
                 filmTitle[i].style.display = 'none';
@@ -492,6 +493,7 @@
         for (let i = 0; i < data.films.length; i++) {
             if(data.films[i].category === 'Animation' ){
                 filmTitle[i].style.display = '';
+                showMore.style.display = 'none'
             }
             else{
                 filmTitle[i].style.display = 'none';
@@ -503,6 +505,7 @@
         for (let i = 0; i < data.films.length; i++) {
             if(data.films[i].category === 'Action' ){
                 filmTitle[i].style.display = '';
+                showMore.style.display = 'none'
             }
             else{
                 filmTitle[i].style.display = 'none';
@@ -514,6 +517,7 @@
         for (let i = 0; i < data.films.length; i++) {
             if(data.films[i].category === 'Horror / Thriller' ){
                 filmTitle[i].style.display = '';
+                showMore.style.display = 'none'
             }
             else{
                 filmTitle[i].style.display = 'none';
@@ -521,10 +525,13 @@
         }
     });
     all.addEventListener('click',function () {
+        showMore.style.display = ''
+        showMore.textContent = 'Voir plus'
         for (let i = 0; i < data.films.length; i++) {
-
-                filmTitle[i].style.display = '';
-
+          filmTitle[i].style.display = 'none'
+        }
+        for (let i = 0; i < 4; i++) {
+          filmTitle[i].style.display = '';
         }
     });
 
@@ -557,10 +564,17 @@
     }
     var filmTitle = document.querySelectorAll('.box')
     showMore.addEventListener('click', function() {
-      showMore.style.display = 'none'
-      for (let index = 4; index < data.films.length; index++) {
-        boxes[index].style.display = ''
-    }
+      if (showMore.textContent === 'Voir plus') {
+        showMore.textContent = 'Voir moins'
+        for (let index = 4; index < data.films.length; index++) {
+          boxes[index].style.display = ''
+        }
+      } else {
+        for (let index = 4; index < data.films.length; index++) {
+          boxes[index].style.display = 'none'
+        }
+        showMore.textContent = 'Voir plus'
+      }
     })
 
     $(document).ready(function (){
