@@ -44,7 +44,7 @@
       display: flex;
       margin: auto;
       /*margin-top: 10%;*/
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 4px solid rgba(255, 255, 255, 1);
     }
 
     .containerPlayer {
@@ -347,6 +347,10 @@
     ::-webkit-scrollbar { 
       display: none; 
     }
+
+    .all {
+      color: #F5A623;
+    }
   </style>
 </head>
 
@@ -384,12 +388,12 @@
     </div>
   </div>
   
-  <div>
-    <button class="comedie">comedie</button>
-    <button class="animation">animation</button>
-    <button class="action">action</button>
-    <button class="horreur">horreur</button>
-    <button class="all">all</button>
+  <div class="buttonContainer"> 
+    <p class="all">Tous nos films</p>
+    <p class="animation">Animation</p>
+    <p class="action">Action</p>
+    <p class="horreur">Horreur</p>
+    <p class="comedie">Comédie</p>
   </div>
   <section class="catContainer thriller">
     
@@ -498,9 +502,81 @@
     var animation = document.querySelector('.animation');
     var action = document.querySelector('.action');
     var horreur = document.querySelector('.horreur');
+    var divbox = document.querySelectorAll('.box');
     var all = document.querySelector('.all');
 
     var filmTitle = document.querySelectorAll('.box')
+
+    all.addEventListener('click', function() {
+      for (var i = 0; i < divbox.length; i++) {
+          if (data.films[i].category === 'all') {
+            divbox[i].style.display = 'block';
+          } else {
+            divbox[i].style.display = 'none';
+          }
+          }
+          animation.style.color = "white";
+          horreur.style.color = "white";
+          action.style.color = "white";
+          comedie.style.color = "white";
+          all.style.color = "#F5A623";
+    });
+      horreur.addEventListener('click', function() {
+        for (var i = 0; i < divbox.length; i++) {
+          if (data.films[i].category === 'Horror') {
+            divbox[i].style.display = 'block';
+          } else {
+            divbox[i].style.display = 'none';
+          }
+          }
+          animation.style.color = "white";
+          horreur.style.color = "#F5A623";
+          action.style.color = "white";
+          comedie.style.color = "white";
+          all.style.color = "white";
+    });
+    animation.addEventListener('click', function() {
+      for (var i = 0; i < divbox.length; i++) {
+        if (data.films[i].category === 'Animation') {
+          divbox[i].style.display = 'block';
+        } else {
+          divbox[i].style.display = 'none';
+        }
+        }
+        animation.style.color = "#F5A623";
+        horreur.style.color = "white";
+        action.style.color = "white";
+        comedie.style.color = "white";
+        all.style.color = "white";
+  });
+  action.addEventListener('click', function() {
+    for (var i = 0; i < divbox.length; i++) {
+      if (data.films[i].category === 'Action') {
+        divbox[i].style.display = 'block';
+      } else {
+        divbox[i].style.display = 'none';
+      }
+      }
+      animation.style.color = "white";
+      horreur.style.color = "white";
+      action.style.color = "#F5A623";
+      comedie.style.color = "white";
+      all.style.color = "white";
+});
+  comedie.addEventListener('click', function() {
+    for (var i = 0; i < divbox.length; i++) {
+      if (data.films[i].category === 'Comedy') {
+        divbox[i].style.display = 'block';
+      } else {
+        divbox[i].style.display = 'none';
+      }
+      }
+      animation.style.color = "white";
+      horreur.style.color = "white";
+      action.style.color = "white";
+      comedie.style.color = "#F5A623";
+      all.style.color = "white";
+  });
 
     comedie.addEventListener('click',function () {
     for (let i = 0; i < data.films.length; i++) {
@@ -560,9 +636,11 @@
         }
     });
 
+    
+
     for (let index = 0; index < 4; index++) {
       var box = document.createElement('div')
-
+    
       box.classList.add('box')
 
       var img = document.createElement('img')
@@ -572,6 +650,19 @@
 
       box.appendChild(img)
       containerbox.appendChild(box)     
+
+      // var info = document.createElement('div');
+      // info.classList.add('info');
+      // box.appendChild(info);
+      // var title = document.createElement('p');
+      // title.classList.add('title');
+      // info.appendChild(title);
+      // title.innerHTML += data.films[index].title;
+
+      // var description = document.createElement('p');
+      // description.classList.add('description');
+      // info.appendChild(description);
+      // description.innerHTML += data.films[index].description;
     }
 
     for (let index = 4; index < data.films.length; index++) {
@@ -586,6 +677,7 @@
 
       box.appendChild(img)
       containerbox.appendChild(box)
+  
     }
     var filmTitle = document.querySelectorAll('.box')
     showMore.addEventListener('click', function() {
@@ -611,6 +703,9 @@
          });
 
 
+         
+
+
   </script>
   
   
@@ -618,6 +713,7 @@
   <script type="text/javascript" src="burgermenu.js"></script>
   <script type="text/javascript" src="./modal.js"></script>
   <script type="text/javascript" src="./videoPlayer.js"></script>
+ 
 </body>
 
 </html>
