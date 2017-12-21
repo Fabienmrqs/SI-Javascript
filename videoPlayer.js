@@ -206,28 +206,42 @@ function init() {
       var fullScreenBtn = document.createElement("div")
       var video = document.getElementById("Video")
       var checkFullScreen = 0
+      var div = document.getElementById('div')
 
       div.appendChild(fullScreenBtn)
       fullScreenBtn.setAttribute('id', "fullScreenBtn")
       fullScreenBtn.textContent = "{ }"
 
       fullScreenBtn.addEventListener("click", function() {
-        video.webkitRequestFullScreen()
-        checkFullScreen = 1
+        // if (!checkFullScreen) {
+        //   div.style.display = 'block'
+        //   video.webkitRequestFullScreen()
+        //   checkFullScreen = 1
+        // } else {
+        //   video.webkitExitFullscreen()
+        //   checkFullScreen = 0
+        //   div.style.display = 'grid'
+        // }
       })
       window.addEventListener('keydown', function(e) {
+        var div = document.getElementById('div')
+
         if (e.keyCode === 70 && !checkFullScreen) {
           if (video.requestFullscreen) {
             video.requestFullscreen();
+            div.style.display = 'block'
           } else if (video.mozRequestFullScreen) {
             video.mozRequestFullScreen();
+            div.style.display = 'block'
           } else if (video.webkitRequestFullscreen) {
             video.webkitRequestFullscreen();
+            div.style.display = 'block'
           }
           checkFullScreen = 1
         } else {
           video.webkitExitFullscreen()
           checkFullScreen = 0
+          div.style.display = 'grid'
         }
       })
     }
@@ -258,9 +272,9 @@ function init() {
         if (e.keyCode === 32) {
           playPause()
         }
-        // if (e.keyCode === 75) {
-        //   playPause()
-        // }
+        if (e.keyCode === 75) {
+          playPause()
+        }
         if (e.keyCode === 74) {
           video.currentTime -= 10
         }
@@ -279,5 +293,5 @@ function init() {
     createDigitTime()
     createDescContent()
     keyCodeFunction()
-    // createFullScreenBtn()
+    createFullScreenBtn()
   }
