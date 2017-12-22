@@ -11,7 +11,7 @@ body {
 .titleContainer {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 196px;
+  
   width: 680px;
   height: 210px;
 }
@@ -65,7 +65,7 @@ body {
   align-content: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 200px;
+  margin-top: 20px;
 }
 
 .popNext {
@@ -167,7 +167,7 @@ body {
   display: flex;
   justify-content: center; 
   color : white;
-  
+  margin-top: 200px;
   
   
 }
@@ -196,6 +196,95 @@ body {
   cursor: pointer;
 }
 
-@font-face {
-  font-family: 
+.CarousselContainer {
+  
+  
+  /* border: 1px solid red; */
+  height: 400px;
+  /* width: 100%; */
+  position: relative;
+  left: 0;
+ /* transition: left .3s ease-out;*/
+  
+}
+
+.extendcaroussel {
+  /* width: 100%; */
+  display: flex;
+  height: 100%;
+  position: absolute;
+  
+}
+
+[class*="slidecaroussel"] {
+width: 100vw;
+height: 100%;
+}
+
+.slidecaroussel1 {
+  background-color:  red;
+  background: url(img/maxpaynelul.jpg) no-repeat right ;
+  display: flex;
+  flex-direction: column;
+  
+  align-items: flex-end;
+  justify-content: space-between;
+
+  
+}
+
+.slidecaroussel2 {
+  background : url(img/xenalul.jpg) no-repeat center ;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.slidecaroussel3 {
+  background: url(img/redhood.jpg) no-repeat center ;
+  
+  display: flex;
+  flex-direction: column;
+ 
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.titlecaroussel {
+ color: white;
+ font-size: 1em;
+  
+}
+
+.cathcaroussel {
+  width: 40px;
+  height: 40px;
+  color: white;
+  margin-right: 141px;
+  font-size: 1.7em;
+}
+
+.botcaroussel {
+  width: 100%;
+  height: 220px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ratingcaroussel {
+  margin-right: 174px;
+  margin-top: 140px;
+  font-size: 2em;
+
+
+}
+
+.titlecaroussel {
+  margin-left: 50px;
+  font-size: 3em;
+  height: 300px;
 }

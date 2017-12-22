@@ -75,6 +75,9 @@ function init() {
       })
 
       window.addEventListener('keydown', function(e) {
+        if (!video) {
+          return;
+        }
         if (e.keyCode === 83) {
         video.currentTime = 0
         video.pause()
@@ -106,6 +109,10 @@ function init() {
         var volumeSlider = document.getElementById("volumeSlider")
         var video = document.getElementById("Video")
 
+        if (!video) {
+          return;
+        }
+
         if (e.keyCode === 77 && muteBtn.textContent === "\uD83D\uDD0A") {
           video.volume = 0
           muteBtn.textContent = "\uD83D\uDD07"
@@ -134,6 +141,10 @@ function init() {
         }
       })
       window.addEventListener('keydown', function(e) {
+        if (!video) {
+          return;
+        }
+
         if (volumeSlider.value < 1) {
           muteBtn.textContent = "\uD83D\uDD07"
         }
@@ -226,6 +237,10 @@ function init() {
       window.addEventListener('keydown', function(e) {
         var div = document.getElementById('div')
 
+        if (!div) {
+          return;
+        }
+
         if (e.keyCode === 70 && !checkFullScreen) {
           if (video.requestFullscreen) {
             video.requestFullscreen();
@@ -250,6 +265,10 @@ function init() {
       var video = document.getElementById("Video")
       var playBtn = document.getElementById("playBtn")
 
+      if (!video) {
+        return;
+      }
+
       if (video.paused) {
           video.play()
           playBtn.textContent = "\u25AE\u25AE"
@@ -263,6 +282,10 @@ function init() {
       var video = document.getElementById("Video")
 
       window.addEventListener('keydown', function(e) {
+        if (!video) {
+          return;
+        }
+
         if (e.keyCode === 39) {
           video.currentTime += 5
         }
@@ -270,6 +293,7 @@ function init() {
           video.currentTime -= 5
         }
         if (e.keyCode === 32) {
+          console.log(video)
           playPause()
         }
         if (e.keyCode === 75) {
