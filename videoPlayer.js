@@ -32,6 +32,7 @@ function init() {
     function createPlayBtn() {
       var playBtn = document.createElement("div")
       var video = document.getElementById("Video")
+      var stopScreenDiv = document.querySelector('.stopScreenDiv')
 
       div.appendChild(playBtn)
       playBtn.setAttribute('id', "playBtn")
@@ -41,9 +42,11 @@ function init() {
         // playPause()
         if (video.paused) {
           video.play()
+          stopScreenDiv.style.display = 'none'
           playBtn.textContent = "\u25AE\u25AE"
       } else {
           video.pause()
+          stopScreenDiv.style.display = ''
           playBtn.textContent = "\u25B6"
       }
       })
@@ -52,9 +55,24 @@ function init() {
         // playPause()
         if (video.paused) {
             video.play()
+            stopScreenDiv.style.display = 'none'
             playBtn.textContent = "\u25AE\u25AE"
         } else {
             video.pause()
+            stopScreenDiv.style.display = ''
+            playBtn.textContent = "\u25B6"
+        }
+      })
+
+      stopScreenDiv.addEventListener("click", function() {
+        // playPause()
+        if (video.paused) {
+            video.play()
+            stopScreenDiv.style.display = 'none'
+            playBtn.textContent = "\u25AE\u25AE"
+        } else {
+            video.pause()
+            stopScreenDiv.style.display = ''
             playBtn.textContent = "\u25B6"
         }
       })
@@ -208,6 +226,7 @@ function init() {
       var video = document.getElementById("Video")
       var checkFullScreen = 0
       var div = document.getElementById('div')
+      var stopScreenDiv = document.querySelector('.stopScreenDiv')
 
       div.appendChild(fullScreenBtn)
       fullScreenBtn.appendChild(fullScreenImg)
@@ -227,6 +246,7 @@ function init() {
           muteBtn.classList.toggle('zIndex__muteBtn')
           volumeSlider.classList.toggle('zIndex__volumeSlider')
           fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+          stopScreenDiv.classList.toggle('zIndex__stopScreenDiv')
           checkFullScreen = 1
         } else {
           video.webkitExitFullscreen()
@@ -238,9 +258,39 @@ function init() {
           muteBtn.classList.toggle('zIndex__muteBtn')
           volumeSlider.classList.toggle('zIndex__volumeSlider')
           fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+          stopScreenDiv.classList.toggle('zIndex__stopScreenDiv')
           checkFullScreen = 0
         }
       })
+
+      video.addEventListener('dblclick', function() {
+        if (!checkFullScreen) {
+          div.style.display = 'block'
+          video.webkitRequestFullScreen()
+          progressBar.classList.toggle('zIndex__progressBar')
+          playBtn.classList.toggle('zIndex__playBtn')
+          restartBtn.classList.toggle('zIndex__restartBtn')
+          digitTime.classList.toggle('zIndex__digitTime')
+          muteBtn.classList.toggle('zIndex__muteBtn')
+          volumeSlider.classList.toggle('zIndex__volumeSlider')
+          fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+          stopScreenDiv.classList.toggle('zIndex__stopScreenDiv')
+          checkFullScreen = 1
+        } else {
+          video.webkitExitFullscreen()
+          div.style.display = 'grid'
+          progressBar.classList.toggle('zIndex__progressBar')
+          playBtn.classList.toggle('zIndex__playBtn')
+          restartBtn.classList.toggle('zIndex__restartBtn')
+          digitTime.classList.toggle('zIndex__digitTime')
+          muteBtn.classList.toggle('zIndex__muteBtn')
+          volumeSlider.classList.toggle('zIndex__volumeSlider')
+          fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+          stopScreenDiv.classList.toggle('zIndex__stopScreenDiv')
+          checkFullScreen = 0
+        }
+      })
+
       window.addEventListener('keydown', function(e) {
         var div = document.getElementById('div')
         var progressBar = document.getElementById('progressBar')
@@ -262,6 +312,7 @@ function init() {
             muteBtn.classList.toggle('zIndex__muteBtn')
             volumeSlider.classList.toggle('zIndex__volumeSlider')
             fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+            stopScreenDiv.classList.toggle('zIndex__stopScreenDiv')
           } else if (video.mozRequestFullScreen) {
             video.mozRequestFullScreen();
             div.style.display = 'block'
@@ -272,6 +323,7 @@ function init() {
             muteBtn.classList.toggle('zIndex__muteBtn')
             volumeSlider.classList.toggle('zIndex__volumeSlider')
             fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+            stopScreenDiv.classList.toggle('zIndex__stopScreenDiv')
           } else if (video.webkitRequestFullscreen) {
             video.webkitRequestFullscreen();
             div.style.display = 'block'
@@ -282,6 +334,7 @@ function init() {
             muteBtn.classList.toggle('zIndex__muteBtn')
             volumeSlider.classList.toggle('zIndex__volumeSlider')
             fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+            stopScreenDiv.classList.toggle('zIndex__stopScreenDiv')
           }
           checkFullScreen = 1
         } else if (e.keyCode === 70) {
@@ -295,6 +348,7 @@ function init() {
           muteBtn.classList.toggle('zIndex__muteBtn')
           volumeSlider.classList.toggle('zIndex__volumeSlider')
           fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+          stopScreenDiv.classList.toggle('zIndex__stopScreenDiv')
         } else if (e.keyCode === 27) {
           video.webkitExitFullscreen()
           checkFullScreen = 0
@@ -306,6 +360,7 @@ function init() {
           muteBtn.classList.toggle('zIndex__muteBtn')
           volumeSlider.classList.toggle('zIndex__volumeSlider')
           fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+          stopScreenDiv.classList.toggle('zIndex__stopScreenDiv')
         }
       })
     }
@@ -313,12 +368,17 @@ function init() {
     function playPause() {
       var video = document.getElementById("Video")
       var playBtn = document.getElementById("playBtn")
+      var stopScreenDiv = document.querySelector('.stopScreenDiv')
+
 
       if (video.paused) {
+      console.log(stopScreenDiv)
           video.play()
+          stopScreenDiv.style.display = 'none'
           playBtn.textContent = "\u25AE\u25AE"
       } else {
           video.pause()
+          stopScreenDiv.style.display = ''
           playBtn.textContent = "\u25B6"
       }
     }

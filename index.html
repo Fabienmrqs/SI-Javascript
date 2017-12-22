@@ -138,8 +138,6 @@
 
     #playBtn:hover {
       cursor: pointer;
-      background: #F5A623;
-      transition: ease .2s;
     }
 
     #restartBtn {
@@ -156,8 +154,6 @@
 
     #restartBtn:hover {
       cursor: pointer;
-      background: red;
-      transition: ease .2s;
     }
 
     #progressBar {
@@ -469,6 +465,21 @@
 .offcanvas.open .content, .offcanvas.open .menu {
   transform: translate3d(150px, 0, 0);
 }
+
+  .stopScreenImg {
+    width: 90px;
+    opacity: 0.6;
+  }
+
+  .stopScreenDiv {
+    position: absolute;
+    margin-left: 310px;
+    margin-top: 176px;
+  }
+
+  .stopScreenDiv:hover {
+    cursor: pointer;
+  }
   </style>
 </head>
 
@@ -575,6 +586,9 @@
     <div class="modalOverlay"></div>
     <div class="modalContent">
       <div class="containerPlayer">
+        <div class="stopScreenDiv">
+         <img src="./img/pauseScreenImg.png" alt="" class="stopScreenImg">
+        </div>
       </div>
       <div class="containerDescription">
         <h2 class="descriptionTitle">Description du film</h2>

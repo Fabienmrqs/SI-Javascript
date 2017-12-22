@@ -244,3 +244,10 @@ body {
   bottom: 9px;
   right: 7px;
 }
+.zIndex__stopScreenDiv {
+  position: absolute !important;
+  z-index: 999999999999999;
+  bottom: 300px;
+  right: 300px;
+  width: 10% !important;
+}
