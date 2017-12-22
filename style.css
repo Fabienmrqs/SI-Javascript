@@ -95,7 +95,7 @@ body {
 }
 
 .featureCat1 {
-  margin-right: 10px;
+  margin-right: 50px;
   height: 1px;
   width: 50px;
   background: #fff;
@@ -103,7 +103,7 @@ body {
 }
 
 .featureCat {
-  margin-left: 10px;
+  margin-left: 50px;
   height: 1px;
   width: 50px;
   background: #fff;
@@ -121,9 +121,10 @@ body {
 .box { 
   width: 24%;
   height: 550px;
-  
   overflow: hidden;
-  margin-top: 30px;
+  margin: 30px auto 0 auto;
+  position: relative;
+  transition: .6s ease;
 }
 
 .box:hover {
@@ -141,18 +142,38 @@ body {
   height: 100%;
   object-fit: cover;
   cursor: pointer;
+  position: relative;  
 }
 
 .img:hover {
   background-color: black;
-  opacity: 0.6; 
+  opacity: 0.6;
+  transition: all 0.5s ease;
+  transform: scale(1.05);
 }
 .title, .description{
   color: #fff;
   top: 50px;
   position: absolute;
-  z-index: 9999;
+  /* z-index: 9999; */
 
+}
+
+.info {
+  position: absolute;
+  width: 100%;
+  top:0;
+}
+
+.title, .description{
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  top: 500px;
+  padding-top: 15px;
+  background: rgba(0, 0, 0, 0.58);
 }
 
 .textmiddle {
@@ -168,6 +189,7 @@ body {
   justify-content: center; 
   color : white;
   margin-top: 200px;
+  font-size: 21px;
   
   
 }
@@ -279,7 +301,7 @@ height: 100%;
   margin-right: 174px;
   margin-top: 140px;
   font-size: 2em;
-
+  color: #F18F01;
 
 }
 
@@ -287,4 +309,55 @@ height: 100%;
   margin-left: 50px;
   font-size: 3em;
   height: 300px;
+}
+.zIndex__progressBar {
+  position: absolute;
+  z-index: 9999999999;
+  bottom: 40px;
+  left: 1px;
+  width: 100% !important;
+}
+.zIndex__playBtn {
+  position: absolute;
+  z-index: 9999999999;
+  bottom: 9px;
+  left: 2px;
+}
+.zIndex__restartBtn {
+  position: absolute;
+  z-index: 9999999999;
+  bottom: 9px;
+  left: 40px;
+}
+.zIndex__digitTime {
+  position: absolute;
+  z-index: 9999999999;
+  bottom: 14px;
+  right: 36px;
+}
+.zIndex__muteBtn {
+  position: absolute;
+  z-index: 9999999999;
+  bottom: 12px;
+  right: 300px;
+}
+.zIndex__volumeSlider {
+  position: absolute;
+  z-index: 9999999999;
+  bottom: 18px;
+  right: 122px;
+  width: 10% !important;
+}
+.zIndex__fullScreenBtn {
+  position: absolute;
+  z-index: 9999999999;
+  bottom: 9px;
+  right: 7px;
+}
+.zIndex__stopScreenDiv {
+  position: absolute !important;
+  z-index: 999999999999999;
+  bottom: 300px;
+  right: 300px;
+  width: 10% !important;
 }

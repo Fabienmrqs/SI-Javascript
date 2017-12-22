@@ -32,6 +32,7 @@ function init() {
     function createPlayBtn() {
       var playBtn = document.createElement("div")
       var video = document.getElementById("Video")
+      var stopScreenDiv = document.querySelector('.stopScreenDiv')
 
       div.appendChild(playBtn)
       playBtn.setAttribute('id', "playBtn")
@@ -41,9 +42,11 @@ function init() {
         // playPause()
         if (video.paused) {
           video.play()
+          stopScreenDiv.style.display = 'none'
           playBtn.textContent = "\u25AE\u25AE"
       } else {
           video.pause()
+          stopScreenDiv.style.display = ''
           playBtn.textContent = "\u25B6"
       }
       })
@@ -52,9 +55,24 @@ function init() {
         // playPause()
         if (video.paused) {
             video.play()
+            stopScreenDiv.style.display = 'none'
             playBtn.textContent = "\u25AE\u25AE"
         } else {
             video.pause()
+            stopScreenDiv.style.display = ''
+            playBtn.textContent = "\u25B6"
+        }
+      })
+
+      stopScreenDiv.addEventListener("click", function() {
+        // playPause()
+        if (video.paused) {
+            video.play()
+            stopScreenDiv.style.display = 'none'
+            playBtn.textContent = "\u25AE\u25AE"
+        } else {
+            video.pause()
+            stopScreenDiv.style.display = ''
             playBtn.textContent = "\u25B6"
         }
       })
@@ -215,27 +233,84 @@ function init() {
 
     function createFullScreenBtn() {
       var fullScreenBtn = document.createElement("div")
+      var fullScreenImg = document.createElement("img")
       var video = document.getElementById("Video")
       var checkFullScreen = 0
       var div = document.getElementById('div')
+      var stopScreenDiv = document.querySelector('.stopScreenDiv')
 
       div.appendChild(fullScreenBtn)
+      fullScreenBtn.appendChild(fullScreenImg)
       fullScreenBtn.setAttribute('id', "fullScreenBtn")
-      fullScreenBtn.textContent = "{ }"
+      fullScreenImg.setAttribute('src', './img/full-screen.png')
+      fullScreenImg.setAttribute('width', '20px')
+      // fullScreenBtn.textContent = "{ }"
 
       fullScreenBtn.addEventListener("click", function() {
-        // if (!checkFullScreen) {
-        //   div.style.display = 'block'
-        //   video.webkitRequestFullScreen()
-        //   checkFullScreen = 1
-        // } else {
-        //   video.webkitExitFullscreen()
-        //   checkFullScreen = 0
-        //   div.style.display = 'grid'
-        // }
+        if (!checkFullScreen) {
+          div.style.display = 'block'
+          video.webkitRequestFullScreen()
+          progressBar.classList.toggle('zIndex__progressBar')
+          playBtn.classList.toggle('zIndex__playBtn')
+          restartBtn.classList.toggle('zIndex__restartBtn')
+          digitTime.classList.toggle('zIndex__digitTime')
+          muteBtn.classList.toggle('zIndex__muteBtn')
+          volumeSlider.classList.toggle('zIndex__volumeSlider')
+          fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+          stopScreenDiv.classList.toggle('zIndex__stopScreenDiv')
+          checkFullScreen = 1
+        } else {
+          video.webkitExitFullscreen()
+          div.style.display = 'grid'
+          progressBar.classList.toggle('zIndex__progressBar')
+          playBtn.classList.toggle('zIndex__playBtn')
+          restartBtn.classList.toggle('zIndex__restartBtn')
+          digitTime.classList.toggle('zIndex__digitTime')
+          muteBtn.classList.toggle('zIndex__muteBtn')
+          volumeSlider.classList.toggle('zIndex__volumeSlider')
+          fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+          stopScreenDiv.classList.toggle('zIndex__stopScreenDiv')
+          checkFullScreen = 0
+        }
       })
+
+      video.addEventListener('dblclick', function() {
+        if (!checkFullScreen) {
+          div.style.display = 'block'
+          video.webkitRequestFullScreen()
+          progressBar.classList.toggle('zIndex__progressBar')
+          playBtn.classList.toggle('zIndex__playBtn')
+          restartBtn.classList.toggle('zIndex__restartBtn')
+          digitTime.classList.toggle('zIndex__digitTime')
+          muteBtn.classList.toggle('zIndex__muteBtn')
+          volumeSlider.classList.toggle('zIndex__volumeSlider')
+          fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+          stopScreenDiv.classList.toggle('zIndex__stopScreenDiv')
+          checkFullScreen = 1
+        } else {
+          video.webkitExitFullscreen()
+          div.style.display = 'grid'
+          progressBar.classList.toggle('zIndex__progressBar')
+          playBtn.classList.toggle('zIndex__playBtn')
+          restartBtn.classList.toggle('zIndex__restartBtn')
+          digitTime.classList.toggle('zIndex__digitTime')
+          muteBtn.classList.toggle('zIndex__muteBtn')
+          volumeSlider.classList.toggle('zIndex__volumeSlider')
+          fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+          stopScreenDiv.classList.toggle('zIndex__stopScreenDiv')
+          checkFullScreen = 0
+        }
+      })
+
       window.addEventListener('keydown', function(e) {
         var div = document.getElementById('div')
+        var progressBar = document.getElementById('progressBar')
+        var playBtn = document.getElementById('playBtn')
+        var restartBtn = document.getElementById('restartBtn')
+        var digitTime = document.getElementById('digitTime')
+        var muteBtn = document.getElementById('muteBtn')
+        var volumeSlider = document.getElementById('volumeSlider')
+        var fullScreenBtn = document.getElementById('fullScreenBtn')
 
         if (!div) {
           return;
@@ -245,18 +320,62 @@ function init() {
           if (video.requestFullscreen) {
             video.requestFullscreen();
             div.style.display = 'block'
+            progressBar.classList.toggle('zIndex__progressBar')
+            playBtn.classList.toggle('zIndex__playBtn')
+            restartBtn.classList.toggle('zIndex__restartBtn')
+            digitTime.classList.toggle('zIndex__digitTime')
+            muteBtn.classList.toggle('zIndex__muteBtn')
+            volumeSlider.classList.toggle('zIndex__volumeSlider')
+            fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+            stopScreenDiv.classList.toggle('zIndex__stopScreenDiv')
           } else if (video.mozRequestFullScreen) {
             video.mozRequestFullScreen();
             div.style.display = 'block'
+            progressBar.classList.toggle('zIndex__progressBar')
+            playBtn.classList.toggle('zIndex__playBtn')
+            restartBtn.classList.toggle('zIndex__restartBtn')
+            digitTime.classList.toggle('zIndex__digitTime')
+            muteBtn.classList.toggle('zIndex__muteBtn')
+            volumeSlider.classList.toggle('zIndex__volumeSlider')
+            fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+            stopScreenDiv.classList.toggle('zIndex__stopScreenDiv')
           } else if (video.webkitRequestFullscreen) {
             video.webkitRequestFullscreen();
             div.style.display = 'block'
+            progressBar.classList.toggle('zIndex__progressBar')
+            playBtn.classList.toggle('zIndex__playBtn')
+            restartBtn.classList.toggle('zIndex__restartBtn')
+            digitTime.classList.toggle('zIndex__digitTime')
+            muteBtn.classList.toggle('zIndex__muteBtn')
+            volumeSlider.classList.toggle('zIndex__volumeSlider')
+            fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+            stopScreenDiv.classList.toggle('zIndex__stopScreenDiv')
           }
           checkFullScreen = 1
-        } else {
+        } else if (e.keyCode === 70) {
           video.webkitExitFullscreen()
           checkFullScreen = 0
           div.style.display = 'grid'
+          progressBar.classList.toggle('zIndex__progressBar')
+          playBtn.classList.toggle('zIndex__playBtn')          
+          restartBtn.classList.toggle('zIndex__restartBtn')
+          digitTime.classList.toggle('zIndex__digitTime')
+          muteBtn.classList.toggle('zIndex__muteBtn')
+          volumeSlider.classList.toggle('zIndex__volumeSlider')
+          fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+          stopScreenDiv.classList.toggle('zIndex__stopScreenDiv')
+        } else if (e.keyCode === 27) {
+          video.webkitExitFullscreen()
+          checkFullScreen = 0
+          div.style.display = 'grid'
+          progressBar.classList.toggle('zIndex__progressBar')
+          playBtn.classList.toggle('zIndex__playBtn')
+          restartBtn.classList.toggle('zIndex__restartBtn')
+          digitTime.classList.toggle('zIndex__digitTime')
+          muteBtn.classList.toggle('zIndex__muteBtn')
+          volumeSlider.classList.toggle('zIndex__volumeSlider')
+          fullScreenBtn.classList.toggle('zIndex__fullScreenBtn')
+          stopScreenDiv.classList.toggle('zIndex__stopScreenDiv')
         }
       })
     }
@@ -264,16 +383,21 @@ function init() {
     function playPause() {
       var video = document.getElementById("Video")
       var playBtn = document.getElementById("playBtn")
+      var stopScreenDiv = document.querySelector('.stopScreenDiv')
+
 
       if (!video) {
         return;
       }
 
       if (video.paused) {
+      console.log(stopScreenDiv)
           video.play()
+          stopScreenDiv.style.display = 'none'
           playBtn.textContent = "\u25AE\u25AE"
       } else {
           video.pause()
+          stopScreenDiv.style.display = ''
           playBtn.textContent = "\u25B6"
       }
     }

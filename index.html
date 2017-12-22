@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-
+  <link rel="icon" href="./img/faviconFanFilm.png">
   <style>
     .h1 {
       color: #ffffff;
@@ -125,14 +125,15 @@
     }*/
 
     #playBtn {
-      width: 40px;
-      height: 30px;
+      width: 32px;
+      height: 24px;
       border-radius: 10px;
       display: flex;
       justify-content: center;
       align-items: center;
       grid-area: playBtn;
       background: silver;
+      padding-top: 3px;
     }
 
     #playBtn:hover {
@@ -141,13 +142,14 @@
 
     #restartBtn {
       background: silver;
-      width: 40px;
-      height: 30px;
+      width: 32px;
+      height: 24px;
       border-radius: 10px;
       display: flex;
       justify-content: center;
       align-items: center;
       grid-area: restartBtn;
+      padding-top: 3px;
     }
 
     #restartBtn:hover {
@@ -200,6 +202,7 @@
       grid-area: volumeSlider;
       width: 75%;
       margin: auto;
+      text-align: right;
     }
 
     #volumeSlider:hover {
@@ -233,9 +236,9 @@
     }
 
     #fullScreenBtn {
-      /*      grid-area: fullScreenBtn;
+      grid-area: fullScreenBtn;
       text-align: center;
-      align-self: center;*/
+      align-self: center;
       color: white;
     }
 
@@ -249,7 +252,11 @@
       display: grid;
       grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
       grid-template-rows: 13fr 1fr 1fr;
-      grid-template-areas: "video video video video video" "progressBar progressBar progressBar progressBar digitTime" "playBtn restartBtn void muteBtn volumeSlider";
+      grid-template-areas:
+          "video video video video video"
+          "progressBar progressBar progressBar progressBar digitTime"
+          "playBtn restartBtn muteBtn volumeSlider fullScreenBtn"
+      ;
     }
 
     #void {
@@ -279,14 +286,17 @@
 
     .movieYear {
       grid-area: movieYear;
+      align-self: center;
     }
 
     .movieRating {
       grid-area: movieRating;
+      align-self: center;
     }
 
     .movieDescription {
       grid-area: movieDescription;
+      line-height: 20px;
     }
 
     /*burger menu*/
@@ -375,87 +385,97 @@
 
     /*burger menu*/
 
-    .btnNav {
-      position: absolute;
-      top: 30px;
-      left: 30px;
-      z-index: 20;
-      cursor: pointer;
-    }
+    .btnNav{
+  position: absolute;
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  z-index: 20;
+  cursor: pointer;
+}
 
-    .btnNav .barre {
-      width: 30px;
-      height: 3px;
-      background: white;
-      margin-top: 3px;
-    }
+.btnNav .barre {
+  width: 30px;
+  height: 3px;
+  background: white;
+  margin-top: 3px;
+}
 
-    .nav {
-      position: fixed;
-      position: absolute;
-      padding: 0 30px;
-      background: rgba(0, 0, 0, 0.2);
-      width: 140px;
-      height: 100vh;
-      border-right: 1px solid rgba(255, 255, 255, 0.6);
+.nav {
+  position: fixed;
+  position: absolute;
+  padding: 0 30px;
+  background: rgba(0, 0, 0, 0.2);
+  width: 140px;
+  height: 100vh;
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
 
-      transform: translateX(-100%);
-      -webkit-transform: translateX(-100%);
-    }
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+}
 
-    .open {
-      transform: translateX(0px);
-      -webkit-transform: translateX(0px);
-      transition: .6s ease;
-    }
+.open {
+  transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+  transition: .6s ease;
+}
 
-    .nav ul {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      -webkit-transform: translateY(-50%);
-    }
+.nav ul {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
 
-    .nav ul li {
-      margin: 20px 0;
-    }
+.nav ul li {
+  margin: 20px 0;
+}
 
-    .nav ul li a {
-      color: #fff;
-      text-transform: uppercase;
-      text-decoration: none;
-      font-size: 20px;
-      letter-spacing: .07cm;
-      font-weight: 800;
-    }
+.nav ul li a {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 20px;
+  letter-spacing: .07cm;
+  font-weight: 800;
+}
 
-    .offcanvas {
-      position: absolute;
-      position: fixed;
-      overflow: hidden;
-      top: 0;
-      left: 0;
-      transition: .6s ease;
-      z-index: 1000;
-    }
+.offcanvas {
+  position: absolute;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  transition: .6s ease;
+}
+.offcanvas .menu {
+  position: absolute;
+  left: -150px;
+  width: 150px;
+  top: 0;
+  bottom: 0;
+}
+.offcanvas .content, .offcanvas .menu {
+  transition: transform 0.5s;
+}
+.offcanvas.open .content, .offcanvas.open .menu {
+  transform: translate3d(150px, 0, 0);
+}
 
-    .offcanvas .menu {
-      position: absolute;
-      left: -150px;
-      width: 150px;
-      top: 0;
-      bottom: 0;
-    }
+  .stopScreenImg {
+    width: 90px;
+    opacity: 0.6;
+  }
 
-    .offcanvas .content,
-    .offcanvas .menu {
-      transition: transform 0.5s;
-    }
+  .stopScreenDiv {
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 220px;
+  }
 
-    .offcanvas.open .content,
-    .offcanvas.open .menu {
-      transform: translate3d(150px, 0, 0);
-    }
+  .stopScreenDiv:hover {
+    cursor: pointer;
+  }
   </style>
 </head>
 
@@ -596,6 +616,9 @@
     <div class="modalOverlay"></div>
     <div class="modalContent">
       <div class="containerPlayer">
+        <div class="stopScreenDiv">
+         <img src="./img/pauseScreenImg.png" alt="" class="stopScreenImg">
+        </div>
       </div>
       <div class="containerDescription">
         <h2 class="descriptionTitle">Description du film</h2>
@@ -763,7 +786,19 @@
       action.style.color = "white";
       comedie.style.color = "#F5A623";
       all.style.color = "white";
-      titleCat.textContent = 'Comedie'
+      titleCat.textContent = 'Comédie'
+  });
+
+    comedie.addEventListener('click',function () {
+    for (let i = 0; i < data.films.length; i++) {
+            if(data.films[i].category === 'Comedy' ){
+                filmTitle[i].style.display = '';
+                showMore.style.display = 'none'
+              }
+            else{
+                filmTitle[i].style.display = 'none';
+            }
+        }
     });
 
     comedie.addEventListener('click', function () {
@@ -839,13 +874,13 @@
       box.appendChild(img)
       containerbox.appendChild(box)
 
-      // var info = document.createElement('div');
-      // info.classList.add('info');
-      // box.appendChild(info);
-      // var title = document.createElement('p');
-      // title.classList.add('title');
-      // info.appendChild(title);
-      // title.innerHTML += data.films[index].title;
+      var info = document.createElement('div');
+      info.classList.add('info');
+      box.appendChild(info);
+      var title = document.createElement('p');
+      title.classList.add('title');
+      info.appendChild(title);
+      title.innerHTML += data.films[index].title;
 
       // var description = document.createElement('p');
       // description.classList.add('description');
@@ -866,6 +901,13 @@
       box.appendChild(img)
       containerbox.appendChild(box)
 
+      var info = document.createElement('div');
+      info.classList.add('info');
+      box.appendChild(info);
+      var title = document.createElement('p');
+      title.classList.add('title');
+      info.appendChild(title);
+      title.innerHTML += data.films[index].title;
     }
     var filmTitle = document.querySelectorAll('.box')
     showMore.addEventListener('click', function () {
