@@ -412,6 +412,11 @@
 
   transform: translateX(-100%);
   -webkit-transform: translateX(-100%);
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: center;
+  font-size: 24px;
 }
 
 .open {
@@ -447,6 +452,7 @@
   top: 0;
   left: 0;
   transition: .6s ease;
+  z-index: 10;
 }
 .offcanvas .menu {
   position: absolute;
@@ -476,6 +482,16 @@
   .stopScreenDiv:hover {
     cursor: pointer;
   }
+
+  .separateur {
+    width: 70%;
+    border: 1px solid white;
+    margin: 20px 0;
+  }
+
+  .burgerMenuItems {
+    margin: 10px 0;
+  }
   </style>
 </head>
 
@@ -491,23 +507,44 @@
     <div class="barre"></div>
   </div>
   <div class="nav offcanvas">
-    <ul>
+<!--     <ul>
       <li>
-        <a href="">Accueil</a>
+        <a href="">Recherche</a>
       </li>
       <li>
-        <a href="">Thriller</a>
+        <a href="">Nouveautés</a>
       </li>
       <li>
-        <a href="">Comédie</a>
+        <a href="">Fan films du moment</a>
       </li>
       <li>
-        <a href="">Animation</a>
-      </li>
-      <li>
-        <a href="">Action</a>
+        <a href="">Prochaines sorties</a>
       </li>
     </ul>
+    <div class="separator"></div>
+    <ul>
+      <li>
+        <a href="">Instagram</a>
+      </li>
+      <li>
+        <a href="">Facebook</a>
+      </li>
+      <li>
+        <a href="">Youtube</a>
+      </li>
+      <li>
+        <a href="">Twitter</a>
+      </li>
+    </ul> -->
+    <p class="burgerMenuItems">Recherche</p>
+    <p class="burgerMenuItems">Nouveutés</p>
+    <p class="burgerMenuItems">Films du moment</p>
+    <p class="burgerMenuItems">Prochaines sorties</p>
+    <div class="separateur"></div>
+    <p class="burgerMenuItems">Instagram</p>
+    <p class="burgerMenuItems">Facebook</p>
+    <p class="burgerMenuItems">Youtube</p>
+    <p class="burgerMenuItems">Twitter</p>
   </div>
 
   <div class="mainContainer">
