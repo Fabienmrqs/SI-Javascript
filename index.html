@@ -56,7 +56,7 @@
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
       display: flex;
-      border-right: 0.1em solid rgba(255, 255, 255, 0.1);
+      border-right: 0.2em solid rgba(255, 255, 255, 0.3);
     }
 
     .containerDescription {
@@ -102,7 +102,7 @@
       height: 360px;
       grid-area: video;
       margin: auto;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 0.2em solid rgba(255, 255, 255, 0.3);
     }
 
     video:hover {
@@ -278,10 +278,14 @@
       grid-area: movieTitle;
       text-align: left;
       align-self: center;
+      font-weight: bold;
+      font-size: 2em;
     }
 
     .movieAuthor {
       grid-area: movieAuthor;
+      align-self: flex-end;
+      margin-bottom: 30px;
     }
 
     .movieYear {
@@ -292,6 +296,7 @@
     .movieRating {
       grid-area: movieRating;
       align-self: center;
+      margin-left: 113px;
     }
 
     .movieDescription {
@@ -405,7 +410,7 @@
   position: fixed;
   position: absolute;
   padding: 0 30px;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.6);
   width: 140px;
   height: 100vh;
   border-right: 1px solid rgba(255, 255, 255, 0.6);
@@ -492,6 +497,16 @@
   .burgerMenuItems {
     margin: 10px 0;
   }
+
+  .burgerMenuUserImg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .burgerMenuUserDiv {
+    width: 84px;
+    margin-bottom: 20px;
+  }
   </style>
 </head>
 
@@ -536,8 +551,11 @@
         <a href="">Twitter</a>
       </li>
     </ul> -->
+    <div class="burgerMenuUserDiv">
+      <img src="./img/burgerMenuUserImg.png" alt="" class="burgerMenuUserImg">
+    </div>
     <p class="burgerMenuItems">Recherche</p>
-    <p class="burgerMenuItems">Nouveutés</p>
+    <p class="burgerMenuItems">Nouveautés</p>
     <p class="burgerMenuItems">Films du moment</p>
     <p class="burgerMenuItems">Prochaines sorties</p>
     <div class="separateur"></div>
